@@ -71,35 +71,48 @@ namespace ClassReviewTests
 
         }
 
-        [Fact]
-        public void TestPosNegMinus2()
+        //[Fact]
+        //public void TestPosNegMinus2()
+        //{
+        //    int actual = Misc.PosNeg(-2);
+        //    Assert.Equal(-1, actual);
+        //}
+        //[Fact]
+        //public void TestPosNegMinus1()
+        //{
+        //    int actual = Misc.PosNeg(-1);
+        //    Assert.Equal(-1, actual);
+        //}
+        [Theory]
+        [InlineData(-1,-1)]
+        [InlineData(-2,-1)]
+        [InlineData(0,0)]
+        [InlineData(1,1)]
+        [InlineData(2,1)]
+
+        public void TestPosNeg(int value,int expected)
         {
-            int actual = Misc.PosNeg(-2);
-            Assert.Equal(-1, actual);
+            int actual = Misc.PosNeg(value);
+            Assert.Equal(expected, actual);
         }
-        [Fact]
-        public void TestPosNegMinus1()
-        {
-            int actual = Misc.PosNeg(-1);
-            Assert.Equal(-1, actual);
-        }
-        [Fact]
-        public void TestPosNegZero()
-        {
-            int actual = Misc.PosNeg(0);
-            Assert.Equal(0, actual);
-        }
-        [Fact]
-        public void TestPosNeg1()
-        {
-            int actual = Misc.PosNeg(1);
-            Assert.Equal(1, actual);
-        }
-        [Fact]
-        public void TestPosNeg2()
-        {
-            int actual = Misc.PosNeg(2);
-            Assert.Equal(1, actual);
-        }
+
+        //[Fact]
+        //public void TestPosNegZero()
+        //{
+        //    int actual = Misc.PosNeg(0);
+        //    Assert.Equal(0, actual);
+        //}
+        //[Fact]
+        //public void TestPosNeg1()
+        //{
+        //    int actual = Misc.PosNeg(1);
+        //    Assert.Equal(1, actual);
+        //}
+        //[Fact]
+        //public void TestPosNeg2()
+        //{
+        //    int actual = Misc.PosNeg(2);
+        //    Assert.Equal(1, actual);
+        //}
     }
 }
